@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vũ Quang Điệp | Portfolio cá nhân</title>
+	<link rel="stylesheet" href="css/style.css?v=3">
+	<style>
+		@media (max-width: 680px) {
+			.project-grid .ronaldo-project {
+				grid-template-columns: minmax(0, 1fr) !important;
+				gap: 22px !important;
+			}
+
+			.ronaldo-photo {
+				width: min(100%, 280px);
+				margin-inline: auto;
+			}
+
+			.ronaldo-copy h3 {
+				font-size: 1.05rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav aria-label="Điều hướng chính">
+			<a href="#gioi-thieu">Giới thiệu</a>
+			<a href="#ky-nang">Kỹ năng</a>
+			<a href="#du-an">Dự án</a>
+			<a href="#lo-trinh">Lộ trình học tập</a>
+			<a href="#lien-he">Liên hệ</a>
+		</nav>
+	</header>
+
+	<main>
+		<section id="gioi-thieu">
+			<h1>Xin chào, mình là Vũ Quang Điệp</h1>
+			<p>Mình đang học lớp CNTT 20-04, yêu thích phát triển web và biến ý tưởng thành những trang web hữu ích. Mục
+				tiêu của mình là xây dựng nền tảng vững chắc về HTML, CSS và các công nghệ web. Ngoài giờ học, mình
+				thích nghe nhạc và chơi Liên Quân.</p>
+			<figure>
+				<img src="assets/vuonglam.png" alt="Vương Lâm trong phim hoạt hình Tiên Nghịch" width="200"
+					height="200">
+				<figcaption>Vương Lâm</figcaption>
+			</figure>
+		</section>
+
+		<section id="ky-nang">
+			<h2>Kỹ năng</h2>
+			<ul>
+				<li>HTML5 và cấu trúc nội dung ngữ nghĩa</li>
+				<li>Liên kết, hình ảnh, danh sách và biểu mẫu HTML</li>
+				<li>CSS cơ bản (đang học)</li>
+				<li>Tổ chức tệp và tài nguyên dự án</li>
+			</ul>
+		</section>
+
+		<section id="du-an">
+			<h2>Dự án</h2>
+			<div class="project-grid">
+				<article class="card">
+					<h3>Portfolio cá nhân</h3>
+					<p>Đây là trang giới thiệu bản thân, nơi mình tổng hợp kỹ năng đang học, các dự án yêu thích, lộ
+						trình học tập và thông tin liên hệ.</p>
+					<p>Trang được xây dựng bằng HTML5 ngữ nghĩa và CSS ngoài. Phiên bản hiện tại sử dụng Flexbox, Grid
+						và bố cục responsive để nội dung dễ theo dõi trên cả máy tính lẫn điện thoại.</p>
+				</article>
+				<article class="card">
+					<img class="project-image" src="assets/Tiên Nghịch.png" alt="Poster phim hoạt hình Tiên Nghịch"
+						loading="lazy">
+					<h3>Phim yêu thích: Tiên Nghịch</h3>
+					<p><strong>Tiên Nghịch</strong> là phim hoạt hình tiên hiệp chuyển thể từ tiểu thuyết cùng tên của
+						Nhĩ Căn. Phim theo chân Vương Lâm, một thiếu niên bình thường bước vào con đường tu tiên và dần
+						trưởng thành qua những thử thách, mất mát cùng các lựa chọn khó khăn.</p>
+					<p>Mình yêu thích bộ phim bởi hành trình kiên định của Vương Lâm, thế giới tu tiên rộng lớn và câu
+						chuyện nhấn mạnh ý chí vượt qua nghịch cảnh.</p>
+				</article>
+				<article class="card car-project">
+					<img class="project-image" src="assets/revuelto.jpg" alt="Ảnh siêu xe Lamborghini Revuelto"
+						loading="lazy">
+					<div class="revuelto-wordmark" aria-label="Lamborghini Revuelto">
+						<img class="revuelto-logo" src="assets/Lamboghini-New-Logo-Vector.png" alt="Logo Lamborghini">
+						<span>
+							<span class="brand-name">Lamborghini</span>
+							<span class="model-name">Revuelto</span>
+						</span>
+					</div>
+					<h3>Siêu xe mơ ước</h3>
+					<p>Lamborghini Revuelto là siêu xe plug-in hybrid kết hợp động cơ V12 hút khí tự nhiên với ba mô-tơ
+						điện. Hệ truyền động bốn bánh và thiết kế khí động học tạo nên một mẫu xe hiệu suất cao mang
+						phong cách tương lai.</p>
+					<a class="car-info" href="https://www.lamborghini.com/en-en/models/revuelto" target="_blank"
+						rel="noopener noreferrer">Khám phá Revuelto trên trang Lamborghini</a>
+				</article>
+				<article class="card ronaldo-project"
+					style="grid-template-columns:clamp(72px, 32%, 260px) minmax(0, 1fr);gap:clamp(8px, 2.5vw, 28px)">
+					<img class="ronaldo-photo" src="assets/Anh 7.jpg"
+						alt="Poster Cristiano Ronaldo trong các khoảnh khắc thi đấu" loading="lazy">
+					<div class="ronaldo-copy">
+						<h3>Cầu thủ yêu thích: Cristiano Ronaldo</h3>
+						<p>Tôi là một fan của Cristiano Ronaldo, hay còn được mọi người gọi là CR7. Tôi yêu thích anh
+							không chỉ vì tài năng và những bàn thắng trên sân cỏ, mà còn vì tinh thần nỗ lực và kỷ luật
+							của anh. Ronaldo cho tôi thấy rằng để đạt được thành công, tài năng thôi là chưa đủ mà cần
+							phải cố gắng từng ngày, không ngại khó khăn và luôn muốn vượt qua chính mình.</p>
+						<p>Điều tôi ấn tượng nhất ở Ronaldo là hành trình từ một cậu bé có ước mơ trở thành một trong
+							những cầu thủ nổi tiếng nhất thế giới. Anh là nguồn động lực để tôi cố gắng hơn trong học
+							tập và cuộc sống. Với tôi, Ronaldo không chỉ là một cầu thủ bóng đá mà còn là hình ảnh của
+							sự kiên trì, ý chí và tinh thần theo đuổi ước mơ.</p>
+						<p>Giờ đây, khi Ronaldo đã bước vào những năm cuối của sự nghiệp, tôi càng trân trọng những
+							khoảnh khắc được chứng kiến anh thi đấu. Có thể một ngày nào đó anh sẽ không còn đứng trên
+							sân cỏ nữa, nhưng những gì anh để lại chắc chắn sẽ luôn là một phần ký ức đẹp đối với những
+							người hâm mộ như tôi. Tôi sẽ vẫn luôn dõi theo và ủng hộ anh, từ những ngày đầu cho đến ngày
+							cuối cùng của sự nghiệp. Cảm ơn Ronaldo vì đã trở thành một phần tuổi trẻ của tôi.</p>
+						<p><strong>SIUUUUUUUUUUUUUU</strong></p>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="lo-trinh">
+			<h2>Lộ trình học tập</h2>
+			<ol>
+				<li>
+					<h3>Giai đoạn 1: Nền tảng HTML</h3>
+					<p>Thực hành cấu trúc HTML5, semantic HTML, liên kết, hình ảnh, danh sách và biểu mẫu.</p>
+				</li>
+				<li>
+					<h3>Giai đoạn 2: Trình bày với CSS</h3>
+					<p>Học cách tạo bố cục, màu sắc, kiểu chữ và thiết kế giao diện tương thích với nhiều kích thước màn
+						hình.</p>
+				</li>
+				<li>
+					<h3>Giai đoạn 3: Hoàn thiện dự án web</h3>
+					<p>Áp dụng kiến thức đã học để hoàn thiện portfolio và xây dựng thêm các dự án thực hành.</p>
+				</li>
+			</ol>
+		</section>
+
+		<section id="lien-he">
+			<h2>Liên hệ</h2>
+			<form action="#" method="get">
+				<p>
+					<label for="ho-ten">Họ và tên</label>
+					<input type="text" id="ho-ten" name="ho-ten" autocomplete="name" required>
+				</p>
+				<p>
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" autocomplete="email" required>
+				</p>
+				<p>
+					<label for="noi-dung">Nội dung</label>
+					<textarea id="noi-dung" name="noi-dung" rows="5" required></textarea>
+				</p>
+				<button type="submit">Gửi thông tin</button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2026 Vu Quang Điệp</p>
+	</footer>
+</body>
+
+</html>
