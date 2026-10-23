@@ -55,6 +55,7 @@ nav {
 }
 
 nav a {
+	position: relative;
 	padding: 7px 0;
 	color: var(--ink);
 	font-size: 0.92rem;
@@ -63,8 +64,27 @@ nav a {
 	transition: color 160ms ease;
 }
 
+nav a::after {
+	position: absolute;
+	right: 0;
+	bottom: 1px;
+	left: 0;
+	height: 2px;
+	transform: scaleX(0);
+	transform-origin: right;
+	background: var(--clay);
+	content: "";
+	transition: transform 180ms ease;
+}
+
 nav a:hover {
 	color: var(--clay);
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+	transform: scaleX(1);
+	transform-origin: left;
 }
 
 nav a:focus-visible,
@@ -104,8 +124,28 @@ h1 {
 }
 
 h2 {
+	position: relative;
+	width: fit-content;
 	margin-bottom: 26px;
+	padding-bottom: 12px;
 	font-size: 2.1rem;
+}
+
+h2::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 54px;
+	height: 3px;
+	border-radius: 2px;
+	background: linear-gradient(90deg, var(--green), var(--clay));
+	content: "";
+	transition: width 200ms ease;
+}
+
+section:focus-within h2::after,
+section:hover h2::after {
+	width: 84px;
 }
 
 h3 {
@@ -172,6 +212,13 @@ figure img {
 	box-shadow: var(--shadow);
 	object-fit: cover;
 	object-position: 65% 30%;
+	transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+figure img:hover {
+	transform: rotate(-3deg) scale(1.04);
+	border-color: var(--green);
+	box-shadow: 0 16px 36px rgb(0 0 0 / 38%), 0 0 0 5px rgb(117 210 173 / 12%);
 }
 
 figcaption {
@@ -195,6 +242,13 @@ figcaption {
 	border: 1px solid var(--line);
 	border-radius: 5px;
 	background: var(--surface);
+	transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#ky-nang li:hover {
+	transform: translateY(-3px);
+	border-color: var(--green);
+	box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
 }
 
 #ky-nang li::before {
@@ -230,6 +284,13 @@ figcaption {
 	background: var(--surface);
 	box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
 	overflow-wrap: anywhere;
+	transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.project-grid .card:hover {
+	transform: translateY(-5px);
+	border-color: var(--green);
+	box-shadow: 0 16px 32px rgb(0 0 0 / 30%);
 }
 
 .project-grid .car-project {
@@ -279,6 +340,11 @@ figcaption {
 	border-radius: 4px;
 	background: var(--green-wash);
 	object-fit: cover;
+	transition: filter 200ms ease;
+}
+
+.project-grid .card:hover .project-image {
+	filter: saturate(1.12) contrast(1.04);
 }
 
 .revuelto-logo {
@@ -314,10 +380,14 @@ figcaption {
 	margin-top: 18px;
 	color: var(--green);
 	font-weight: 700;
+	text-decoration-color: transparent;
+	text-underline-offset: 4px;
+	transition: color 160ms ease, text-decoration-color 160ms ease;
 }
 
 .car-info:hover {
 	color: var(--clay);
+	text-decoration-color: currentColor;
 }
 
 #du-an .card p,
@@ -346,6 +416,11 @@ figcaption {
 #lo-trinh li {
 	position: relative;
 	padding: 0 0 28px;
+	transition: transform 180ms ease;
+}
+
+#lo-trinh li:hover {
+	transform: translateX(5px);
 }
 
 #lo-trinh li:last-child {
@@ -363,6 +438,13 @@ figcaption {
 	background: var(--green);
 	box-shadow: 0 0 0 1px var(--green);
 	content: "";
+	transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+#lo-trinh li:hover::before {
+	transform: scale(1.2);
+	background: var(--clay);
+	box-shadow: 0 0 0 1px var(--clay), 0 0 14px rgb(241 154 115 / 45%);
 }
 
 #lien-he {
@@ -394,12 +476,25 @@ textarea {
 	background: var(--surface);
 	color: var(--ink);
 	font: inherit;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
 input:focus,
 textarea:focus {
 	border-color: var(--green);
 	outline: 3px solid rgb(117 210 173 / 24%);
+}
+
+small {
+	display: block;
+	margin-top: 6px;
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+.form-help {
+	margin-top: 0.35rem;
+	font-size: 0.88rem;
 }
 
 textarea {
@@ -417,12 +512,45 @@ button {
 	font: inherit;
 	font-weight: 700;
 	cursor: pointer;
-	transition: background 160ms ease, transform 160ms ease;
+	box-shadow: 0 6px 16px rgb(40 110 85 / 24%);
+	transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 
 button:hover {
 	transform: translateY(-2px);
 	background: #347f64;
+	box-shadow: 0 10px 22px rgb(40 110 85 / 38%);
+}
+
+button:active {
+	transform: translateY(1px);
+	background: var(--green-dark);
+}
+
+.result-panel {
+	max-width: 650px;
+	margin: 72px auto;
+	padding: 32px;
+	border: 1px solid var(--line);
+	border-radius: 5px;
+	background: var(--surface);
+}
+
+.result-panel h1 {
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.result-panel p {
+	color: var(--muted);
+}
+
+.result-panel a {
+	color: var(--green);
+	font-weight: 700;
+}
+
+.result-panel a:hover {
+	color: var(--clay);
 }
 
 @keyframes rainbow-glint {
@@ -500,6 +628,19 @@ footer p {
 
 	h2 {
 		font-size: 1.85rem;
+	}
+
+	.result-panel {
+		margin: 40px auto;
+		padding: 24px;
+	}
+
+	.result-panel h1 {
+		font-size: clamp(1.5rem, 7vw, 2rem);
+	}
+
+	.result-panel h1 span {
+		display: block;
 	}
 
 	#ky-nang ul {
