@@ -31,6 +31,18 @@ File này ghi lại các lỗi đã phát hiện, nguyên nhân và cách sửa 
 - Link quay lại biểu mẫu hoạt động.
 - GitHub Pages deploy thành công.
 
+## Kiểm tra tự động trên GitHub
+
+Workflow [Kiểm tra website](.github/workflows/validate-site.yml) tự chạy sau mỗi lần push hoặc pull request. Workflow kiểm tra:
+
+- File HTML có đọc được bằng UTF-8 không.
+- `src`, `href` và `action` cục bộ có trỏ tới file tồn tại không.
+- HTML có bị trùng `id` không.
+- CSS có thiếu hoặc thừa dấu ngoặc không.
+- Tài nguyên được gọi bằng `url(...)` trong CSS có tồn tại không.
+
+Để xem log: vào tab **Actions** → chọn **Kiểm tra website** → chọn lần chạy. Dấu xanh là đạt, dấu đỏ là có lỗi; mở bước **Kiểm tra website** để xem dòng lỗi cụ thể.
+
 ## Cách ghi lỗi mới
 
 Thêm một mục theo mẫu sau ở đầu phần “Lịch sử lỗi và cách sửa”:
