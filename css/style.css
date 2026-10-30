@@ -55,6 +55,25 @@ body > * {
 	z-index: 1;
 }
 
+.skip-link {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 10;
+	padding: 9px 14px;
+	border-radius: 4px;
+	background: var(--green);
+	color: #07130e;
+	font-weight: 700;
+	text-decoration: none;
+	transform: translateY(-160%);
+	transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
 body::before {
 	top: 14%;
 	left: -12rem;
@@ -160,6 +179,7 @@ nav a:focus-visible::after {
 }
 
 nav a:focus-visible,
+a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
@@ -327,7 +347,7 @@ figcaption {
 	position: absolute;
 	left: 17px;
 	color: var(--clay);
-	content: "•";
+	content: "\2022";
 	font-size: 1.25rem;
 	font-weight: 700;
 }
