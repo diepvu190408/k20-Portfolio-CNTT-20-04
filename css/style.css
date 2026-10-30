@@ -18,6 +18,10 @@
 	box-sizing: border-box;
 }
 
+img {
+	max-width: 100%;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -149,7 +153,7 @@ nav a {
 	position: relative;
 	padding: 7px 0;
 	color: var(--ink);
-	font-size: 0.92rem;
+	font-size: clamp(0.9375rem, 1.1vw, 1rem);
 	font-weight: 700;
 	text-decoration: none;
 	transition: color 160ms ease;
@@ -212,7 +216,7 @@ h3 {
 h1 {
 	max-width: 640px;
 	margin-bottom: 20px;
-	font-size: 3.1rem;
+	font-size: clamp(1.875rem, 3.2vw, 2.875rem);
 }
 
 h2 {
@@ -220,7 +224,7 @@ h2 {
 	width: fit-content;
 	margin-bottom: 26px;
 	padding-bottom: 12px;
-	font-size: 2.1rem;
+	font-size: clamp(1.75rem, 2.5vw, 2rem);
 }
 
 h2::after {
@@ -242,7 +246,7 @@ section:hover h2::after {
 
 h3 {
 	margin-bottom: 10px;
-	font-size: 1.35rem;
+	font-size: clamp(1.25rem, 1.8vw, 1.4375rem);
 }
 
 p {
@@ -280,7 +284,7 @@ p {
 	max-width: 58ch;
 	margin-bottom: 0;
 	color: var(--muted);
-	font-size: 1.08rem;
+	font-size: clamp(1rem, 1.1vw, 1.0625rem);
 }
 
 #gioi-thieu figure {
@@ -406,10 +410,12 @@ figcaption {
 .ronaldo-photo {
 	display: block;
 	width: 100%;
+	height: auto;
 	max-height: 520px;
 	margin: 0;
 	border-radius: 4px;
 	object-fit: contain;
+	object-position: center;
 }
 
 .ronaldo-copy {
@@ -427,11 +433,13 @@ figcaption {
 .project-image {
 	display: block;
 	width: 100%;
-	aspect-ratio: 16 / 9;
+	height: auto;
+	aspect-ratio: auto;
 	margin-bottom: 18px;
 	border-radius: 4px;
 	background: var(--green-wash);
-	object-fit: cover;
+	object-fit: contain;
+	object-position: center;
 	transition: filter 200ms ease;
 }
 
@@ -675,7 +683,7 @@ footer p {
 	}
 
 	nav a {
-		font-size: 0.85rem;
+		font-size: clamp(0.9375rem, 3.5vw, 1rem);
 	}
 
 	main {
@@ -714,21 +722,13 @@ footer p {
 		margin-left: 0;
 	}
 
-	h1 {
-		font-size: 2rem;
-	}
-
-	h2 {
-		font-size: 1.85rem;
-	}
-
 	.result-panel {
 		margin: 40px auto;
 		padding: 24px;
 	}
 
 	.result-panel h1 {
-		font-size: clamp(1.5rem, 7vw, 2rem);
+		font-size: clamp(1.875rem, 7vw, 2.875rem);
 	}
 
 	.result-panel h1 span {
@@ -745,17 +745,19 @@ footer p {
 	}
 }
 
+@media (min-width: 681px) {
+	h1 {
+		font-size: clamp(2.625rem, 3.2vw, 2.875rem);
+	}
+}
+
 @media (max-width: 380px) {
 	nav {
 		gap: 2px 10px;
 	}
 
 	nav a {
-		font-size: 0.76rem;
-	}
-
-	h1 {
-		font-size: 1.85rem;
+		font-size: 0.9375rem;
 	}
 }
 

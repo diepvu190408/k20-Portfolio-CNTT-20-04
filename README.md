@@ -22,11 +22,11 @@ Portfolio cá nhân phục vụ bài đánh giá **A2.2 – Triển khai và bà
 │   ├── revuelto.jpg
 │   ├── Tiên Nghịch.png
 │   └── vuonglam.png
-├── AI.log.md
 ├── AI_LOG.md
-├── CHECKLIST.md
-├── RELEASE_NOTES.md
-└── UI_IMPROVEMENTS.md
+└── docs/
+    ├── RELEASE_NOTES.md
+    ├── CHECKLIST.md
+    └── UI_IMPROVEMENTS.md
 ```
 
 ## Chạy trên máy tính
@@ -60,7 +60,7 @@ Portfolio cá nhân phục vụ bài đánh giá **A2.2 – Triển khai và bà
 ## Minh chứng
 
 - [AI_LOG.md](./AI_LOG.md)
-- [RELEASE_NOTES.md](./RELEASE_NOTES.md)
-- [CHECKLIST.md](./CHECKLIST.md)
-- [UI_IMPROVEMENTS.md](./UI_IMPROVEMENTS.md)
-- Ảnh chụp GitHub Repository, Settings > Pages, Deployments và website ẩn danh: cần bổ sung sau khi người học tự chụp.
+- [RELEASE_NOTES.md](./docs/RELEASE_NOTES.md)
+- [CHECKLIST.md](./docs/CHECKLIST.md)
+- [UI_IMPROVEMENTS.md](./docs/UI_IMPROVEMENTS.md)
+- Minh chứng: GitHub Repository, Settings > Pages, Deployments và website ẩn danh.

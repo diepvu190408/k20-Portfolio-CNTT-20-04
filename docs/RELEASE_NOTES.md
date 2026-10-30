@@ -12,6 +12,9 @@
 - Bổ sung kích thước tự nhiên và `decoding="async"` cho ảnh dự án lazy-load.
 - Tăng phiên bản cache stylesheet từ `v4` lên `v5`.
 - Sửa dấu đầu dòng CSS bằng mã Unicode để hiển thị ổn định khi mở local.
+- Chuẩn hóa typography bằng `clamp()`: H1 30–46px, H2 28–32px, H3 20–23px, nội dung 16–17px và menu 15–16px.
+- Điều chỉnh ảnh nội dung để dùng kích thước tự nhiên, `contain` và căn giữa; không thay đổi ảnh nền trang trí.
+- Giữ avatar dạng crop trong khung tròn để tránh khoảng trống hai bên.
 - Tạo đủ tài liệu bàn giao và kiểm chứng cho A2.2.
 
 ## Lỗi đã sửa
@@ -23,16 +26,19 @@
 ## Commit liên quan
 
 - Các commit có sẵn được đối chiếu: `decd680` và `b8eaa19`.
-- Commit cho thay đổi v7: <!-- Bổ sung SHA thật sau khi người học commit. -->
+- Commit cho thay đổi v7: Chưa có commit v7 trong local.
 
 ## Hạn chế còn tồn tại
 
 - Chưa có backend gửi email; biểu mẫu chỉ mô phỏng bằng GET.
-- URL GitHub Pages hiện truy cập được, nhưng chưa chứa các thay đổi v7 chưa commit/push.
+- URL GitHub Pages hiện truy cập được, nhưng chưa chứa các thay đổi v7 đang ở local chưa commit/push.
 - Chưa có ảnh chụp trước/sau thực tế cho minh chứng giao diện.
 - Một số ảnh có dung lượng tương đối lớn và có thể được nén thêm trong phiên tối ưu riêng.
 
-## Bàn giao và tiếp tục phát triển
+## Tài liệu liên quan
 
-Đọc [README.md](./README.md), kiểm tra [CHECKLIST.md](./CHECKLIST.md), sau đó bổ sung URL, ảnh minh chứng và SHA commit thật. Khi phát triển tiếp, giữ đường dẫn tương đối, kiểm tra form sau mỗi thay đổi và cập nhật tài liệu thay vì ghi nhận kết quả chưa kiểm chứng.
+- [README.md](../README.md)
+- [AI_LOG.md](../AI_LOG.md)
+- [CHECKLIST.md](./CHECKLIST.md)
+- [UI_IMPROVEMENTS.md](./UI_IMPROVEMENTS.md)
 
