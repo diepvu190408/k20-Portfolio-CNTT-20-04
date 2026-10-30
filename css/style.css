@@ -45,9 +45,14 @@ body {
 body::before,
 body::after {
 	position: fixed;
-	z-index: -1;
+	z-index: 0;
 	content: "";
 	pointer-events: none;
+}
+
+body > * {
+	position: relative;
+	z-index: 1;
 }
 
 body::before {
