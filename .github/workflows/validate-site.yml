@@ -1,0 +1,19 @@
+name: Kiểm tra website
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Kiểm tra HTML, CSS và tài nguyên
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Kiểm tra website
+        run: python3 scripts/check_site.py
