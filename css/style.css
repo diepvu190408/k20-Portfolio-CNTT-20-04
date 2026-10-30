@@ -23,14 +23,81 @@ html {
 }
 
 body {
+	position: relative;
+	isolation: isolate;
 	margin: 0;
-	background-color: var(--paper);
-	background-image: radial-gradient(#26372e 0.7px, transparent 0.7px);
-	background-size: 18px 18px;
+	background-color: #070b18;
+	background-image:
+		radial-gradient(circle at 18% 12%, rgb(117 97 255 / 17%), transparent 28%),
+		radial-gradient(circle at 84% 78%, rgb(56 191 255 / 12%), transparent 30%),
+		radial-gradient(circle at 50% 0%, rgb(241 154 115 / 7%), transparent 34%),
+		radial-gradient(#ffffff 0.7px, transparent 0.8px),
+		radial-gradient(#9bc8ff 0.6px, transparent 0.8px);
+	background-position: center, center, center, 0 0, 13px 17px;
+	background-size: auto, auto, auto, 97px 113px, 151px 137px;
 	color: var(--ink);
 	font-family: "Trebuchet MS", Verdana, sans-serif;
 	font-size: 16px;
 	line-height: 1.7;
+}
+
+/* Các quầng sáng và sao băng tạo cảm giác thiên hà chuyển động. */
+body::before,
+body::after {
+	position: fixed;
+	z-index: -1;
+	content: "";
+	pointer-events: none;
+}
+
+body::before {
+	top: 14%;
+	left: -12rem;
+	width: 22rem;
+	height: 22rem;
+	border-radius: 50%;
+	background: rgb(103 83 255 / 15%);
+	filter: blur(52px);
+	animation: nebula-drift 32s ease-in-out infinite alternate;
+}
+
+body::after {
+	top: 18%;
+	left: -18%;
+	width: 150px;
+	height: 2px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, transparent, #ffffff, #8ed9ff, transparent);
+	box-shadow: 0 0 8px 2px rgb(142 217 255 / 75%);
+	transform: rotate(-27deg);
+	animation: shooting-star 9s ease-in-out infinite;
+}
+
+@keyframes nebula-drift {
+	from {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	to {
+		transform: translate3d(24vw, 14vh, 0) scale(1.2);
+	}
+}
+
+@keyframes shooting-star {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 0, 0) rotate(-27deg) scaleX(0.6);
+	}
+	12% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+		transform: translate3d(120vw, 52vh, 0) rotate(-27deg) scaleX(1.1);
+	}
+	to {
+		opacity: 0;
+		transform: translate3d(120vw, 52vh, 0) rotate(-27deg) scaleX(1.1);
+	}
 }
 
 header {
