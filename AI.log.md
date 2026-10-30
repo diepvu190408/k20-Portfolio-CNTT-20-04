@@ -1,46 +1,40 @@
-# Nhật ký kiểm tra website
+# AI Log
 
-File này ghi lại các lỗi đã phát hiện, nguyên nhân và cách sửa để có thể xem trực tiếp trên GitHub.
+## Mục đích
 
-## Trạng thái hiện tại
+File này dùng để ghi lại những việc đã nhờ AI hỗ trợ trong quá trình làm website.
 
-- Website: [Portfolio trên GitHub Pages](https://diepvu190408.github.io/k20-Portfolio-CNTT-20-04/)
-- Repository: [k20-Portfolio-CNTT-20-04](https://github.com/diepvu190408/k20-Portfolio-CNTT-20-04)
-- Trạng thái: Đã kiểm tra, website đang chạy.
+## Nhật ký
 
-## Lịch sử lỗi và cách sửa
+### 30/10/2026 — Sửa hiệu ứng nền
 
-### 2026-10-30 — Hiệu ứng nền không hiển thị
+- Vấn đề: Hiệu ứng tinh vân và sao băng không hiển thị.
+- Nguyên nhân: Hai lớp hiệu ứng bị đặt phía sau nền trang bằng `z-index: -1`.
+- Đã làm: Đổi hiệu ứng sang lớp hiển thị `z-index: 0`, nội dung trang dùng `z-index: 1`.
+- File thay đổi: `css/style.css`.
+- Commit: `decd680`.
 
-- Hiện tượng: Hiệu ứng tinh vân và sao băng không thấy trên trang.
-- Nguyên nhân: `body::before` và `body::after` dùng `z-index: -1`, bị nền của `body` che mất.
-- Cách sửa: Đổi lớp hiệu ứng thành `z-index: 0` và đặt nội dung chính ở `z-index: 1` trong [css/style.css](css/style.css).
-- Commit: `decd680` — `Fix animated galaxy layer visibility`.
+### 30/10/2026 — Làm mới bộ nhớ đệm CSS
 
-### 2026-10-30 — GitHub Pages dùng CSS cũ
+- Vấn đề: GitHub Pages vẫn hiển thị CSS cũ.
+- Đã làm: Đổi `style.css?v=3` thành `style.css?v=4`.
+- File thay đổi: `index.html`, `ket-qua.html`.
+- Commit: `b8eaa19`.
 
-- Hiện tượng: GitHub Pages vẫn tải stylesheet phiên bản cũ sau khi sửa CSS.
-- Nguyên nhân: Trình duyệt/CDN giữ cache của `style.css?v=3`.
-- Cách sửa: Đổi liên kết stylesheet thành `style.css?v=4` trong [index.html](index.html) và [ket-qua.html](ket-qua.html).
-- Commit: `b8eaa19` — `Refresh stylesheet cache for animation fix`.
+### 30/10/2026 — Kiểm tra trang kết quả
 
-## Đã kiểm tra
+- Đã kiểm tra form trong `index.html`.
+- Form chuyển đúng tới `ket-qua.html`.
+- Link quay lại biểu mẫu hoạt động bình thường.
 
-- Các hình ảnh trong thư mục `assets/` tải được.
-- Form trong [index.html](index.html) chuyển đúng sang [ket-qua.html](ket-qua.html).
-- Link quay lại biểu mẫu hoạt động.
-- GitHub Pages deploy thành công.
-
-## Cách ghi lỗi mới
-
-Thêm một mục theo mẫu sau ở đầu phần “Lịch sử lỗi và cách sửa”:
+## Mẫu ghi thêm
 
 ```md
-### YYYY-MM-DD — Tên lỗi
+### DD/MM/YYYY — Tên công việc
 
-- Hiện tượng: Mô tả lỗi nhìn thấy.
-- Nguyên nhân: Vì sao lỗi xảy ra.
-- Cách sửa: File hoặc đoạn mã đã thay đổi.
-- Commit: `mã-commit` — `tên commit`.
+- Vấn đề:
+- Nguyên nhân:
+- Đã làm:
+- File thay đổi:
+- Commit:
 ```
-
